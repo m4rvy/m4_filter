@@ -33,6 +33,39 @@ Show # Incursion Mod Items
 
 # #Currency
 
+Hide #$Currency->Net->T3
+    Class "Currency"
+    BaseType "Simple Iron Net" "Reinforced Iron Net" "Strong Iron Net"
+    SetTextColor 155 210 135
+    SetBackgroundColor 0 0 0
+    SetBorderColor 220 220 220
+    SetFontSize 30
+
+Hide #$Currency->Net->T2
+    Class "Currency"
+    BaseType "Simple Steel Net" "Reinforced Steel Net"
+    SetTextColor 155 210 135
+    SetBackgroundColor 0 0 0
+    SetBorderColor 0 255 36
+    SetFontSize 30
+
+Show #$Currency->Net->T4
+    Class "Currency"
+    BaseType "Simple Rope Net" "Reinforced Rope Net"
+    SetTextColor 155 210 135
+    SetBackgroundColor 0 0 0
+    SetBorderColor 0 0 0
+    SetFontSize 35
+
+Show #$Currency->Net->T4
+    Class "Currency"
+    BaseType "Thaumaturgical Net" "Strong Rope Net" "Strong Steel Net" "Bestiary Orb" "Necromancy Net"
+    SetTextColor 184 218 242
+    SetBackgroundColor 0 0 0
+    SetBorderColor 92 166 76
+    SetFontSize 42
+    PlayAlertSound 2 120
+
 Show
     BaseType "Mirror of Kalandra"
     SetTextColor 0 100 150 200
@@ -317,6 +350,13 @@ Show
     SetTextColor 0 255 200 # Maps - Labyrinth
     SetBackgroundColor 0 0 0 # Maps - Labyrinth
     SetBorderColor 74 230 58 # Maps - Labyrinth
+
+# Currency - CatchAll
+Show
+    Class "Currency"
+    SetTextColor 184 218 242 # Currency - CatchAll
+    SetBackgroundColor 0 0 0 # Currency - CatchAll
+    SetBorderColor 170 158 130 0 # Currency - CatchAll
 
 # #Gems
 
@@ -992,11 +1032,4 @@ Hide
 Hide
     SetBackgroundColor 0 0 0 190 # Hide
     SetFontSize 11
-
-# Currency - CatchAll
-Show
-    Class "Currency"
-    SetTextColor 184 218 242 # Currency - CatchAll
-    SetBackgroundColor 0 0 0 # Currency - CatchAll
-    SetBorderColor 170 158 130 0 # Currency - CatchAll
 
