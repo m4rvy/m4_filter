@@ -23,48 +23,9 @@ Show # $quest
     SetTextColor 255 255 255 # TEXTCOLOR: Quest
     SetBorderColor 0 210 195 # BORDERCOLOR: Quest Item
     SetFontSize 45
-
-Show # Incursion Mod Items
-    Identified True
-    SetTextColor 220 0 0 240 # TEXTCOLOR: Incursion Mod
-    SetBorderColor 220 0 0 240 # BORDERCOLOR: Aspect High Potential
-    SetFontSize 45
-    PlayAlertSound 3 300
+    PlayAlertSound 2 79
 
 # #Currency
-
-Hide #$Currency->Net->T3
-    Class "Currency"
-    BaseType "Simple Iron Net" "Reinforced Iron Net" "Strong Iron Net"
-    SetTextColor 155 210 135
-    SetBackgroundColor 0 0 0
-    SetBorderColor 220 220 220
-    SetFontSize 30
-
-Hide #$Currency->Net->T2
-    Class "Currency"
-    BaseType "Simple Steel Net" "Reinforced Steel Net"
-    SetTextColor 155 210 135
-    SetBackgroundColor 0 0 0
-    SetBorderColor 0 255 36
-    SetFontSize 30
-
-Show #$Currency->Net->T4
-    Class "Currency"
-    BaseType "Simple Rope Net" "Reinforced Rope Net"
-    SetTextColor 155 210 135
-    SetBackgroundColor 0 0 0
-    SetBorderColor 0 0 0
-    SetFontSize 35
-
-Show #$Currency->Net->T4
-    Class "Currency"
-    BaseType "Thaumaturgical Net" "Strong Rope Net" "Strong Steel Net" "Bestiary Orb" "Necromancy Net"
-    SetTextColor 184 218 242
-    SetBackgroundColor 0 0 0
-    SetBorderColor 92 166 76
-    SetFontSize 42
-    PlayAlertSound 2 120
 
 Show
     BaseType "Mirror of Kalandra"
@@ -143,9 +104,9 @@ Show
     SetFontSize 39
 
 Show
-    BaseType "Chromatic Orb" "Orb of Alteration" "Perandus Coin"
-    SetTextColor 0 33 255
-    SetBackgroundColor 11 0 61 219
+    BaseType "Chromatic Orb" "Orb of Alteration"
+    SetTextColor 52 124 255
+    SetBackgroundColor 14 1 71 153
     SetBorderColor 0 149 255
     SetFontSize 44
 
@@ -226,14 +187,14 @@ Show
     BaseType "Blessing of Esh"
     SetTextColor 92 220 255
     SetBorderColor 0 237 255
-    SetFontSize 40
+    SetFontSize 44
     PlayAlertSound 2 50
 
 Show
     BaseType "Blessing of Uul-Netol"
     SetTextColor 128 128 128
     SetBorderColor 128 128 128
-    SetFontSize 40
+    SetFontSize 43
     PlayAlertSound 2 45
 
 Show
@@ -466,7 +427,7 @@ Show
     SetTextColor 201 190 119
     SetBackgroundColor 33 4 7
     SetBorderColor 158 142 55 # Maps 79+
-    SetFontSize 38
+    SetFontSize 43
     PlayAlertSound 4 80
 
 # Maps - 79+
@@ -486,7 +447,7 @@ Show # Maps:T15
     SetBackgroundColor 184 218 242 # BACKGROUND: T1 Global High Value Drop
     SetBorderColor 0 0 0 # BORDERCOLOR: Cosmetic: Highlight good drops
     SetFontSize 40
-    PlayAlertSound 15 250
+    PlayAlertSound 7 250
 
 # Maps - 79+
 Show
@@ -495,8 +456,8 @@ Show
     SetTextColor 255 0 0
     SetBackgroundColor 33 4 7
     SetBorderColor 150 0 0 # Maps 79+
-    SetFontSize 40
-    PlayAlertSound 16 250
+    SetFontSize 45
+    PlayAlertSound 7 250
 
 # Maps - 75+
 Show
