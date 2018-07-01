@@ -203,7 +203,7 @@ Show
     SetBackgroundColor 71 0 74
     SetBorderColor 210 0 220
     SetFontSize 45
-    PlayAlertSound ShGeneral 79
+    PlayAlertSoundPositional 6 100
 
 Hide
     BaseType "Scroll Fragment"
@@ -411,6 +411,16 @@ Show # 5-Links
     SetFontSize 43
     PlayAlertSound 2 250
 
+Show # %TB-Uniques-T1
+    DropLevel >= 86
+    Rarity = Unique
+    BaseType "Infernal Sword"
+    SetTextColor 175 96 37 # TEXTCOLOR: Uniques
+    SetBackgroundColor 255 255 255 # BACKGROUND: T1 Global High Value Drop
+    SetBorderColor 175 96 37 # BORDERCOLOR: Unique Item
+    SetFontSize 45
+    PlayAlertSound 10 299
+
 Show # T3
     Rarity = Unique
     SetTextColor 175 96 37 # TEXTCOLOR: Uniques
@@ -432,11 +442,21 @@ Show
 
 # Maps - 79+
 Show
+    ItemLevel >= 82
+    BaseType "Underground Sea Map"
+    SetTextColor 210 0 0
+    SetBackgroundColor 214 214 214
+    SetBorderColor 255 40 0 220 # Maps 79+
+    SetFontSize 42
+    PlayAlertSound 15 250
+
+# Maps - 79+
+Show
+    DropLevel >= 83
     Class "Maps"
-    BaseType "Lair of the Hydra Map" "Pit of the Chimera Map" "Maze of the Minotaur Map" "Forge of the Phoenix Map"
-    SetTextColor 255 0 0
-    SetBackgroundColor 184 199 201
-    SetBorderColor 255 0 0 # Maps 79+
+    SetTextColor 210 0 0
+    SetBackgroundColor 214 214 214
+    SetBorderColor 255 40 0 220 # Maps 79+
     SetFontSize 42
     PlayAlertSound 8 250
 
@@ -446,8 +466,8 @@ Show # Maps:T15
     SetTextColor 0 0 0 # TEXTCOLOR: Cosmetic: Black Text
     SetBackgroundColor 184 218 242 # BACKGROUND: T1 Global High Value Drop
     SetBorderColor 0 0 0 # BORDERCOLOR: Cosmetic: Highlight good drops
-    SetFontSize 40
-    PlayAlertSound 7 250
+    SetFontSize 43
+    PlayAlertSound 15 250
 
 # Maps - 79+
 Show
@@ -466,19 +486,26 @@ Show
     SetTextColor 0 0 0
     SetBackgroundColor 200 200 200
     SetBorderColor 0 0 0 # Maps 75+
-    SetFontSize 39
+    SetFontSize 42
     PlayAlertSound 3 50
 
 # Maps - <=70
 Show
     DropLevel <= 72
     Class "Maps"
-    BaseType "Volcano Map" "Burial Chambers Map" "Haunted Mansion Map" "Spider Forest Map" "Underground Sea Map"
+    BaseType "Volcano Map" "Burial Chambers Map"
     SetTextColor 255 192 203
     SetBackgroundColor 0 27 28
     SetBorderColor 74 0 160 200
     SetFontSize 45
     PlayAlertSound 7 160
+
+# Maps - <=70
+Hide
+    DropLevel <= 72
+    Class "Maps"
+    SetBorderColor 136 136 255
+    SetFontSize 40
 
 Show # Maps:Unique - T1 - only museum is needed, but legacy might have some surprises.
     Rarity = Unique
@@ -502,6 +529,14 @@ Show
     Class "Map Fragment"
     SetBorderColor 255 255 255
     SetFontSize 40
+
+Show # $maps->elder->Top
+    Class "Maps"
+    SetTextColor 100 0 122 # TEXTCOLOR: High Map
+    SetBackgroundColor 255 255 255 # BACKGROUND: T0 Drop
+    SetBorderColor 100 0 255 # BORDERCOLOR: T0 Map
+    SetFontSize 45
+    PlayAlertSound 14 300
 
 # #Quest Items
 
@@ -799,6 +834,26 @@ Show #$ %TB-Vise %H5
 
 # #Jewels
 
+Show #$trinkets, jewels - 84+
+    ItemLevel >= 80
+    Rarity = Rare
+    Class "Abyss Jewel"
+    SetTextColor 255 255 0 # TEXTCOLOR: Jewel: Rare
+    SetBackgroundColor 120 120 0 # BACKGROUND: Jewel: Rare
+    SetBorderColor 255 200 0 # BORDERCOLOR: Abyss84
+    SetFontSize 45
+    PlayAlertSound 2 250
+
+Show
+    ItemLevel >= 80
+    Rarity <= Magic
+    Class "Abyss Jewel"
+    SetTextColor 140 190 255 # Jewels - Abyss - 84+ - Normal & Magic
+    SetBackgroundColor 0 0 0 # Jewels - Abyss - 84+ - Normal & Magic
+    SetBorderColor 150 0 0 # Jewels - Abyss - 84+ - Normal & Magic
+    SetFontSize 43
+    PlayAlertSound 2 79
+
 # Jewels - Rare
 Show
     Rarity = Rare
@@ -817,32 +872,14 @@ Show
     Rarity = Rare
     Class "Abyss Jewel"
     SetBorderColor 255 255 119 # Jewels - Abyss - Rare
+    SetFontSize 39
 
 Show
     Rarity <= Magic
     Class "Abyss Jewel"
     SetBorderColor 136 136 255 # Jewels - Abyss - Normal & Magic
 
-Show #$trinkets, jewels - 84+
-    ItemLevel >= 84
-    Rarity = Rare
-    Class "Abyss Jewel"
-    SetTextColor 255 255 0 # TEXTCOLOR: Jewel: Rare
-    SetBackgroundColor 120 120 0 # BACKGROUND: Jewel: Rare
-    SetBorderColor 255 200 0 # BORDERCOLOR: Abyss84
-    SetFontSize 40
-    PlayAlertSound 2 250
-
 Show
-    ItemLevel >= 84
-    Rarity <= Magic
-    Class "Abyss Jewel"
-    SetTextColor 140 190 255 # Jewels - Abyss - 84+ - Normal & Magic
-    SetBackgroundColor 0 0 0 # Jewels - Abyss - 84+ - Normal & Magic
-    SetBorderColor 150 0 0 # Jewels - Abyss - 84+ - Normal & Magic
-    SetFontSize 35
-
-Hide
     ItemLevel >= 79
     Rarity <= Magic
     Class "Abyss Jewel"
@@ -881,7 +918,7 @@ Show
 # Divination Cards -> "Eternity" "The Road To Power" "The Chains That Bind"
 Show
     Class "Divination Card"
-    BaseType "The Hoarder" "The Gladiator" "Time-Lost Relic" "The Dark Mage" "The Cataclysm" "Chaotic Disposition" "The Aesthete" "The Cartographer" "The Cataclysm" "The Dark Mage" "The Demoness" "The Dragon's Heart" "The Enlightened" "The Fox" "Gift of the Gemling Queen" "Glimmer of Hope" "Merciless Armament" "The Calling" "The Dapper Prodigy" "The Fletcher" "Heterochromia" "Lucky Deck" "Earth Drinker" "The Chains that Bind" "Emperor of Purity" "The Warlord" "The Scavenger" "The Soul" "The Void" "The Valkyrie" "The Devastator" "The Sephirot" "The Formless Sea" "The Brittle Emperor" "The Wind" "The Vast" "Bowyer's Dream" "The Thaumaturgist" "The Dapper Prodigy" "Time-Lost Relic" "Last Hope" "The Professor" "Perfection" "The Mayor"
+    BaseType "The Hoarder" "The Gladiator" "Time-Lost Relic" "The Dark Mage" "The Cataclysm" "Chaotic Disposition" "The Aesthete" "The Cartographer" "The Cataclysm" "The Dark Mage" "The Demoness" "The Dragon's Heart" "The Enlightened" "The Fox" "Gift of the Gemling Queen" "Glimmer of Hope" "Merciless Armament" "The Calling" "The Dapper Prodigy" "The Fletcher" "Heterochromia" "Lucky Deck" "Earth Drinker" "The Chains that Bind" "Emperor of Purity" "The Warlord" "The Scavenger" "The Soul" "The Void" "The Valkyrie" "The Devastator" "The Sephirot" "The Formless Sea" "The Brittle Emperor" "The Wind" "The Vast" "Bowyer's Dream" "The Thaumaturgist" "The Dapper Prodigy" "Time-Lost Relic" "Last Hope" "The Professor" "Perfection" "The Mayor" "The Saint's Treasure"
     SetTextColor 0 0 0 # Divination Card - Very Valuable
     SetBackgroundColor 120 252 255
     SetBorderColor 128 0 128 # Divination Card - Very Valuable
@@ -974,7 +1011,7 @@ Show # $bad, small, autosmall %H1
     SetTextColor 255 190 0 # TEXTCOLOR: Rares - Level - 75+
     SetBackgroundColor 120 20 20 150 # BACKGROUND: Rares - Basetypes - Bad.
     SetBorderColor 150 150 150 150 # BORDERCOLOR: Rares - Size - Small (+Bad basetype)
-    SetFontSize 35
+    SetFontSize 30
 
 # Sacrificial Garb
 Hide
